@@ -74,7 +74,7 @@ void WebSocketClient::writeBytes(const QByteArray &bytes)
             emit bytesWritten(bytes, makeFlag(m_serverAddress, m_serverPort) + "[B]");
         }
     } else {
-        qWarning() << "Invalid data channel: " << m_channel;
+        qWarning() << "test workflow Invalid data channel: " << m_channel;
     }
 }
 
