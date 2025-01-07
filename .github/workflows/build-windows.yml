@@ -38,4 +38,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: built-software
-          path: ./build/xTools  # 替换为生成的文件路径
+          path: ./build/assets/xTools  # 替换为生成的文件路径
