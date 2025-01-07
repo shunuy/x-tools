@@ -3,9 +3,9 @@
 #   schedule:
 #     - cron: '0 0 * * *'
 on:
- push:
-   branches:
-     - master
+#  push:
+#    branches:
+#      - master
  workflow_dispatch: # 添加这个触发器
 jobs:
   build:

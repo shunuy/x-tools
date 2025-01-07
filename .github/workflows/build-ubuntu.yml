@@ -1,11 +1,13 @@
 ﻿name: build-ubuntu
-on:
-  schedule:
-    - cron: '0 0 * * *'
 # on:
+#   schedule:
+#     - cron: '0 0 * * *'
+
+on:
 #  push:
 #    branches:
 #      - master
+  workflow_dispatch: # 添加这个触发器
 jobs:
   build:
     name: Build
@@ -38,3 +40,9 @@ jobs:
           cd build
           cmake -DCMAKE_PREFIX_PATH='${{ github.workspace }}/Qt/${{ matrix.version }}/${{ matrix.arch }}' -DCMAKE_BUILD_TYPE=Release -G "Unix Makefiles" ../
           cmake --build . --target xTools
+      - name: Save Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: built-software
+          path: ./build/assets/xTools  # 替换为生成的文件路径
+
