@@ -36,7 +36,7 @@ QObject *WebSocketClient::initDevice()
         emit errorOccurred(m_webSocket->errorString());
     });
 
-    QString url = QString("ws://%1:%2").arg(m_serverAddress).arg(m_serverPort);
+    QString url = QString("ws://%1:%2/ws").arg(m_serverAddress).arg(m_serverPort);
     if (m_authentication) {
         QNetworkRequest request(url);
         QString username = m_username;
